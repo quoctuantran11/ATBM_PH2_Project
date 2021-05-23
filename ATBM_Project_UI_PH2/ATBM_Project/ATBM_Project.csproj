@@ -55,6 +55,18 @@
     <Compile Include="fAdmin.Designer.cs">
       <DependentUpon>fAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="fBacSi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fBacSi.Designer.cs">
+      <DependentUpon>fBacSi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fBanThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fBanThuoc.Designer.cs">
+      <DependentUpon>fBanThuoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="fCreateRole.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +127,18 @@
     <Compile Include="fObjectPrivUser.Designer.cs">
       <DependentUpon>fObjectPrivUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="fQuanLyChuyenMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fQuanLyChuyenMon.Designer.cs">
+      <DependentUpon>fQuanLyChuyenMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fQuanLyTaiVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fQuanLyTaiVu.Designer.cs">
+      <DependentUpon>fQuanLyTaiVu.cs</DependentUpon>
+    </Compile>
     <Compile Include="fRevokeRolePrivilege.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +187,12 @@
     <EmbeddedResource Include="fAdmin.resx">
       <DependentUpon>fAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fBacSi.resx">
+      <DependentUpon>fBacSi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fBanThuoc.resx">
+      <DependentUpon>fBanThuoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fCreateRole.resx">
       <DependentUpon>fCreateRole.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +222,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fObjectPrivUser.resx">
       <DependentUpon>fObjectPrivUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fQuanLyChuyenMon.resx">
+      <DependentUpon>fQuanLyChuyenMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fQuanLyTaiVu.resx">
+      <DependentUpon>fQuanLyTaiVu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fRevokeRolePrivilege.resx">
       <DependentUpon>fRevokeRolePrivilege.cs</DependentUpon>
