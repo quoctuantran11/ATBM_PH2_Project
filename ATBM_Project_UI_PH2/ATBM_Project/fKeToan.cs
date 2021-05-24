@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ATBM_Project
 {
-    public partial class fSystemPrivRole : Form
+    public partial class fKeToan : Form
     {
-        public fSystemPrivRole()
+        public fKeToan()
         {
             InitializeComponent();
         }

@@ -1,7 +1,7 @@
 ﻿
 namespace ATBM_Project
 {
-    partial class fSystemPrivRole
+    partial class fKeToan
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,17 @@ namespace ATBM_Project
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // fKeToan
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "fSystemPrivRole";
+            this.ClientSize = new System.Drawing.Size(1156, 737);
+            this.Name = "fKeToan";
+            this.Text = "Kế toán";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

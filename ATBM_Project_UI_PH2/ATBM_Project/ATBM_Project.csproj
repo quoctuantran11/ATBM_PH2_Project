@@ -67,65 +67,17 @@
     <Compile Include="fBanThuoc.Designer.cs">
       <DependentUpon>fBanThuoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="fCreateRole.cs">
+    <Compile Include="fKeToan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fCreateRole.Designer.cs">
-      <DependentUpon>fCreateRole.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fCreateUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fCreateUser.Designer.cs">
-      <DependentUpon>fCreateUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fDropRole.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fDropRole.Designer.cs">
-      <DependentUpon>fDropRole.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fGrantRolePrivilege.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fGrantRolePrivilege.Designer.cs">
-      <DependentUpon>fGrantRolePrivilege.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fGrantRole_to_User.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fGrantRole_to_User.Designer.cs">
-      <DependentUpon>fGrantRole_to_User.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fGrantUserObjectPrivilege.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fGrantUserObjectPrivilege.Designer.cs">
-      <DependentUpon>fGrantUserObjectPrivilege.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fGrantUserSystemPrivilege.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fGrantUserSystemPrivilege.Designer.cs">
-      <DependentUpon>fGrantUserSystemPrivilege.cs</DependentUpon>
+    <Compile Include="fKeToan.Designer.cs">
+      <DependentUpon>fKeToan.cs</DependentUpon>
     </Compile>
     <Compile Include="fNhanSu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fNhanSu.Designer.cs">
       <DependentUpon>fNhanSu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fObjectPrivRole.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fObjectPrivRole.Designer.cs">
-      <DependentUpon>fObjectPrivRole.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fObjectPrivUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fObjectPrivUser.Designer.cs">
-      <DependentUpon>fObjectPrivUser.cs</DependentUpon>
     </Compile>
     <Compile Include="fQuanLyChuyenMon.cs">
       <SubType>Form</SubType>
@@ -139,43 +91,19 @@
     <Compile Include="fQuanLyTaiVu.Designer.cs">
       <DependentUpon>fQuanLyTaiVu.cs</DependentUpon>
     </Compile>
-    <Compile Include="fRevokeRolePrivilege.cs">
+    <Compile Include="fTaiVu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fRevokeRolePrivilege.Designer.cs">
-      <DependentUpon>fRevokeRolePrivilege.cs</DependentUpon>
+    <Compile Include="fTaiVu.Designer.cs">
+      <DependentUpon>fTaiVu.cs</DependentUpon>
     </Compile>
-    <Compile Include="fRevokeRole_from_User.cs">
+    <Compile Include="fTiepTan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fRevokeRole_from_User.Designer.cs">
-      <DependentUpon>fRevokeRole_from_User.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fRevokeUserPrivilege.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fRevokeUserPrivilege.Designer.cs">
-      <DependentUpon>fRevokeUserPrivilege.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fSystemPrivRole.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fSystemPrivRole.Designer.cs">
-      <DependentUpon>fSystemPrivRole.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fSystemPrivUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fSystemPrivUser.Designer.cs">
-      <DependentUpon>fSystemPrivUser.cs</DependentUpon>
+    <Compile Include="fTiepTan.Designer.cs">
+      <DependentUpon>fTiepTan.cs</DependentUpon>
     </Compile>
     <Compile Include="Function.cs" />
-    <Compile Include="fUpdateUserPrivilege.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fUpdateUserPrivilege.Designer.cs">
-      <DependentUpon>fUpdateUserPrivilege.cs</DependentUpon>
-    </Compile>
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,35 +121,11 @@
     <EmbeddedResource Include="fBanThuoc.resx">
       <DependentUpon>fBanThuoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fCreateRole.resx">
-      <DependentUpon>fCreateRole.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fCreateUser.resx">
-      <DependentUpon>fCreateUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fDropRole.resx">
-      <DependentUpon>fDropRole.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fGrantRolePrivilege.resx">
-      <DependentUpon>fGrantRolePrivilege.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fGrantRole_to_User.resx">
-      <DependentUpon>fGrantRole_to_User.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fGrantUserObjectPrivilege.resx">
-      <DependentUpon>fGrantUserObjectPrivilege.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fGrantUserSystemPrivilege.resx">
-      <DependentUpon>fGrantUserSystemPrivilege.cs</DependentUpon>
+    <EmbeddedResource Include="fKeToan.resx">
+      <DependentUpon>fKeToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fNhanSu.resx">
       <DependentUpon>fNhanSu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fObjectPrivRole.resx">
-      <DependentUpon>fObjectPrivRole.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fObjectPrivUser.resx">
-      <DependentUpon>fObjectPrivUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fQuanLyChuyenMon.resx">
       <DependentUpon>fQuanLyChuyenMon.cs</DependentUpon>
@@ -229,20 +133,11 @@
     <EmbeddedResource Include="fQuanLyTaiVu.resx">
       <DependentUpon>fQuanLyTaiVu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fRevokeRolePrivilege.resx">
-      <DependentUpon>fRevokeRolePrivilege.cs</DependentUpon>
+    <EmbeddedResource Include="fTaiVu.resx">
+      <DependentUpon>fTaiVu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fRevokeRole_from_User.resx">
-      <DependentUpon>fRevokeRole_from_User.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fRevokeUserPrivilege.resx">
-      <DependentUpon>fRevokeUserPrivilege.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fSystemPrivUser.resx">
-      <DependentUpon>fSystemPrivUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fUpdateUserPrivilege.resx">
-      <DependentUpon>fUpdateUserPrivilege.cs</DependentUpon>
+    <EmbeddedResource Include="fTiepTan.resx">
+      <DependentUpon>fTiepTan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>

@@ -21,72 +21,52 @@ namespace ATBM_Project
 
         private void btnCreateUser_Click(object sender, EventArgs e)
         {
-            fCreateUser admin = new fCreateUser();
-            admin.ShowDialog();
-            this.Show();
+            
         }
 
         private void createToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            fCreateRole admin = new fCreateRole();
-            admin.ShowDialog();
-            this.Show();
+            
         }
 
         private void dropToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            fDropRole admin = new fDropRole();
-            admin.ShowDialog();
-            this.Show();
+            
         }
 
         private void grantToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fGrantRole_to_User admin = new fGrantRole_to_User();
-            admin.ShowDialog();
-            this.Show();
+            
         }
 
         private void revokeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fRevokeRole_from_User admin = new fRevokeRole_from_User();
-            admin.ShowDialog();
-            this.Show();
+            
         }
 
         private void grantUserObjectPrivilegeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fGrantUserObjectPrivilege admin = new fGrantUserObjectPrivilege();
-            admin.ShowDialog();
-            this.Show();
+            
         }
 
         private void grantUserSystemPrivilegeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fGrantUserSystemPrivilege admin = new fGrantUserSystemPrivilege();
-            admin.ShowDialog();
-            this.Show();
+            
         }
 
         private void grantRolePrivilegeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fGrantRolePrivilege admin = new fGrantRolePrivilege();
-            admin.ShowDialog();
-            this.Show();
+            
         }
 
         private void revokeUserPrivilegeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fRevokeUserPrivilege admin = new fRevokeUserPrivilege();
-            admin.ShowDialog();
-            this.Show();
+            
         }
 
         private void revokeRolePrivilegeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fRevokeRolePrivilege admin = new fRevokeRolePrivilege();
-            admin.ShowDialog();
-            this.Show();
+            
         }
 
         private void fAdmin_Load(object sender, EventArgs e)
@@ -164,26 +144,24 @@ namespace ATBM_Project
 
         private void systemPrivilegeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fSystemPrivUser sysUser = new fSystemPrivUser();
-            sysUser.ShowDialog();
+            
         }
 
         private void objectPrivilegeToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            fObjectPrivRole objRole = new fObjectPrivRole();
-            objRole.ShowDialog();
+            
         }
 
         private void objectPrivilegeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fObjectPrivUser objUser = new fObjectPrivUser();
-            objUser.ShowDialog();
+            
         }
 
         private void updateUserPrivToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fUpdateUserPrivilege update = new fUpdateUserPrivilege();
-            update.ShowDialog();
+            
         }
+
+        
     }
 }
