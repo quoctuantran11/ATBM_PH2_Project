@@ -41,9 +41,10 @@ namespace ATBM_Project
             try
             {
                 Function.Con.Open();
-                fAdmin formadmin = new fAdmin();
+                Function.Con.Close();
+                fQuanLyTaiVu tv = new fQuanLyTaiVu();
                 this.Hide();
-                formadmin.ShowDialog();
+                tv.ShowDialog();
                 this.Show();
             }
 
