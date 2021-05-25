@@ -29,22 +29,11 @@ namespace ATBM_Project
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSua = new System.Windows.Forms.Button();
             this.cmbTable = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvResult = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnSua
-            // 
-            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnSua.Location = new System.Drawing.Point(471, 606);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(153, 50);
-            this.btnSua.TabIndex = 10;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
             // 
             // cmbTable
             // 
@@ -79,8 +68,7 @@ namespace ATBM_Project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1136, 677);
-            this.Controls.Add(this.btnSua);
+            this.ClientSize = new System.Drawing.Size(1136, 610);
             this.Controls.Add(this.cmbTable);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvResult);
@@ -94,8 +82,6 @@ namespace ATBM_Project
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.ComboBox cmbTable;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvResult;

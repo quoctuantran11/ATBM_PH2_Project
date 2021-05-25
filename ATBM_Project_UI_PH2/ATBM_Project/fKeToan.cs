@@ -37,14 +37,6 @@ namespace ATBM_Project
             
             cmbTable.DisplayMember = "table_name";
             cmbTable.DataSource = Load_combo();
-            cmbTable.SelectedIndex = -1;
-            if (cmbTable.SelectedIndex == -1)
-            {
-                cmbTable.Text = "Table";
-            }
-
-            
-
         }
 
         private void cmbTable_SelectedIndexChanged(object sender, EventArgs e)
@@ -60,15 +52,6 @@ namespace ATBM_Project
                 dt.Load(cmd.ExecuteReader());
 
                 dgvResult.DataSource = dt;
-
-                if (cmbTable.Text == "CHAMCONG")
-                {
-                    btnSua.Visible = false;
-                }
-                else
-                {
-                    btnSua.Visible = true;
-                }
             }
         }
     }

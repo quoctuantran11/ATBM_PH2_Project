@@ -90,5 +90,118 @@ namespace ATBM_Project
 
             dgvTable.DataSource = dt;
         }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            string ma = dgvTable.CurrentRow.Cells["MaBN"].Value.ToString();
+            string ten = dgvTable.CurrentRow.Cells["HoTenBN"].Value.ToString();
+            string diachi = dgvTable.CurrentRow.Cells["DiaChi"].Value.ToString();
+            string sdt = dgvTable.CurrentRow.Cells["SDT"].Value.ToString();
+            string namsinh = dgvTable.CurrentRow.Cells["NamSinh"].Value.ToString();
+            string[] birth = namsinh.Split(' ');
+
+            string query = "insert into sec_mgr." + cmbTable.Text + " values(" + ma + ",'" + ten + "'," +
+                "'" + diachi + "','" + sdt + "',to_date('" + birth[0] + "','mm/dd/yyyy'))";
+            Function.Con.Open();
+
+            OracleCommand cmd = new OracleCommand(query, Function.Con);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Thêm hoàn tất!", "Thông báo", MessageBoxButtons.OK);
+
+                query = "commit";
+
+                cmd = new OracleCommand(query, Function.Con);
+                cmd.ExecuteNonQuery();
+
+                query = "select * from sec_mgr." + cmbTable.Text;
+
+                cmd = new OracleCommand(query, Function.Con);
+
+                DataTable dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+
+                dgvTable.DataSource = dt;
+                Function.Con.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Dữ liệu đã có sẵn hoặc có lỗi xảy ra!", "Thông báo");
+                Function.Con.Close();
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            Function.Con.Open();
+            string ma = dgvTable.CurrentRow.Cells["MaBN"].Value.ToString();
+
+            string query = "delete from sec_mgr." + cmbTable.Text + " where MaBN = " + ma;
+
+            OracleCommand cmd = new OracleCommand(query, Function.Con);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK);
+
+                query = "select * from sec_mgr." + cmbTable.Text;
+
+                cmd = new OracleCommand(query, Function.Con);
+
+                DataTable dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+
+                dgvTable.DataSource = dt;
+                Function.Con.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Dữ liệu này hiện thời không thể xóa!", "Thông báo");
+                Function.Con.Close();
+            }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            Function.Con.Open();
+            string ma = dgvTable.CurrentRow.Cells["MaPB"].Value.ToString();
+            string ten = dgvTable.CurrentRow.Cells["TenPB"].Value.ToString();
+
+            string query = "update sec_mgr." + cmbTable.Text + " set TenPB = '" + ten + "' where MaPB = " + ma;
+
+            OracleCommand cmd = new OracleCommand(query, Function.Con);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Sửa hoàn tất!", "Thông báo", MessageBoxButtons.OK);
+
+                query = "commit";
+
+                cmd = new OracleCommand(query, Function.Con);
+                cmd.ExecuteNonQuery();
+
+                query = "select * from sec_mgr." + cmbTable.Text;
+
+                cmd = new OracleCommand(query, Function.Con);
+
+                DataTable dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+
+                dgvTable.DataSource = dt;
+                Function.Con.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Dữ liệu đã có sẵn hoặc có lỗi xảy ra!", "Thông báo");
+                Function.Con.Close();
+            }
+        }
     }
 }

@@ -23,15 +23,13 @@ namespace ATBM_Project
         {
             cmbTable.DisplayMember = "table_name";
             cmbTable.DataSource = Load_combo();
-            cmbTable.SelectedIndex = -1;
-            if(cmbTable.SelectedIndex == -1)
-            {
-                cmbTable.Text = "Table";
-            }
+            
         }
 
         private DataTable Load_combo()
         {
+            Function.Con.Open();
+
             OracleCommand cmd = new OracleCommand("sec_mgr.sp_ViewTable", Function.Con);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -39,7 +37,8 @@ namespace ATBM_Project
 
             DataTable dt = new DataTable();
             dt.Load(cmd.ExecuteReader());
-           
+
+            Function.Con.Close();
             return dt;
         }
 
@@ -51,12 +50,13 @@ namespace ATBM_Project
                 string query = "select * from sec_mgr." + cmbTable.Text;
 
                 OracleCommand cmd = new OracleCommand(query, Function.Con);
-                
+                Function.Con.Open();
 
                 DataTable dt = new DataTable();
                 dt.Load(cmd.ExecuteReader());
 
                 dgvResult.DataSource = dt;
+                Function.Con.Close();
 
                 if (cmbTable.Text == "PHONGBAN" || cmbTable.Text == "NHANVIEN" || cmbTable.Text == "CHAMCONG")
                 {
@@ -81,6 +81,7 @@ namespace ATBM_Project
                 string ten = dgvResult.CurrentRow.Cells["TenPB"].Value.ToString();
 
                 string query = "insert into sec_mgr." + cmbTable.Text + " values(" + ma + ",'" + ten + "')";
+                Function.Con.Open();
 
                 OracleCommand cmd = new OracleCommand(query, Function.Con);
 
@@ -103,14 +104,17 @@ namespace ATBM_Project
                     dt.Load(cmd.ExecuteReader());
 
                     dgvResult.DataSource = dt;
+                    Function.Con.Close();
                 }
                 catch
                 {
                     MessageBox.Show("Dữ liệu đã có sẵn hoặc có lỗi xảy ra!", "Thông báo");
+                    Function.Con.Close();
                 }
             }
             else if (cmbTable.Text == "NHANVIEN")
             {
+                Function.Con.Open();
                 string query = "";
                 string ma = dgvResult.CurrentRow.Cells["MaNV"].Value.ToString();
                 string ten = dgvResult.CurrentRow.Cells["HoTenNV"].Value.ToString();
@@ -162,20 +166,24 @@ namespace ATBM_Project
                     dt.Load(cmd.ExecuteReader());
 
                     dgvResult.DataSource = dt;
+                    Function.Con.Close();
                 }
                 catch
                 {
                     MessageBox.Show("Dữ liệu đã có sẵn hoặc có lỗi xảy ra!", "Thông báo");
+                    Function.Con.Close();
                 }
             }
             else if (cmbTable.Text == "CHAMCONG")
             {
+                Function.Con.Open();
                 string ma = dgvResult.CurrentRow.Cells["MaNV"].Value.ToString();
                 string ten = dgvResult.CurrentRow.Cells["TenPK"].Value.ToString();
                 string ngay = dgvResult.CurrentRow.Cells["NgayTruc"].Value.ToString();
+                string[] ngay1 = ngay.Split(' ');
 
                 string query = "insert into sec_mgr." + cmbTable.Text + " values('" + ma +
-                    "','" + ten + "',to_date('" + ngay + "','dd/mm/yyyy'))";
+                    "','" + ten + "',to_date('" + ngay1[0] + "','mm/dd/yyyy'))";
 
                 OracleCommand cmd = new OracleCommand(query, Function.Con);
 
@@ -198,10 +206,12 @@ namespace ATBM_Project
                     dt.Load(cmd.ExecuteReader());
 
                     dgvResult.DataSource = dt;
+                    Function.Con.Close();
                 }
                 catch
                 {
                     MessageBox.Show("Dữ liệu đã có sẵn hoặc có lỗi xảy ra!", "Thông báo");
+                    Function.Con.Close();
                 }
             }
         }
@@ -210,6 +220,7 @@ namespace ATBM_Project
         {
             if (cmbTable.Text == "PHONGBAN")
             {
+                Function.Con.Open();
                 string ma = dgvResult.CurrentRow.Cells["MaPB"].Value.ToString();
 
                 string query = "delete from sec_mgr." + cmbTable.Text + " where MaPB = " + ma;
@@ -230,14 +241,17 @@ namespace ATBM_Project
                     dt.Load(cmd.ExecuteReader());
 
                     dgvResult.DataSource = dt;
+                    Function.Con.Close();
                 }
                 catch
                 {
                     MessageBox.Show("Dữ liệu này hiện thời không thể xóa!", "Thông báo");
+                    Function.Con.Close();
                 }
             }
             else if (cmbTable.Text == "NHANVIEN")
             {
+                Function.Con.Open();
                 string ma = dgvResult.CurrentRow.Cells["MaNV"].Value.ToString();
 
                 string query = "delete from sec_mgr." + cmbTable.Text + " where MaNV = '" + ma + "'";
@@ -258,14 +272,17 @@ namespace ATBM_Project
                     dt.Load(cmd.ExecuteReader());
 
                     dgvResult.DataSource = dt;
+                    Function.Con.Close();
                 }
                 catch
                 {
                     MessageBox.Show("Dữ liệu này hiện thời không thể xóa!", "Thông báo");
+                    Function.Con.Close();
                 }
             }
             else if (cmbTable.Text == "CHAMCONG")
             {
+                Function.Con.Open();
                 string ma = dgvResult.CurrentRow.Cells["MaNV"].Value.ToString();
                 string ten = dgvResult.CurrentRow.Cells["TenPK"].Value.ToString();
 
@@ -288,10 +305,12 @@ namespace ATBM_Project
                     dt.Load(cmd.ExecuteReader());
 
                     dgvResult.DataSource = dt;
+                    Function.Con.Close();
                 }
                 catch
                 {
                     MessageBox.Show("Dữ liệu này hiện thời không thể xóa!", "Thông báo");
+                    Function.Con.Close();
                 }
             }
         }
@@ -300,6 +319,7 @@ namespace ATBM_Project
         {
             if (cmbTable.Text == "PHONGBAN")
             {
+                Function.Con.Open();
                 string ma = dgvResult.CurrentRow.Cells["MaPB"].Value.ToString();
                 string ten = dgvResult.CurrentRow.Cells["TenPB"].Value.ToString();
 
@@ -326,15 +346,17 @@ namespace ATBM_Project
                     dt.Load(cmd.ExecuteReader());
 
                     dgvResult.DataSource = dt;
+                    Function.Con.Close();
                 }
                 catch
                 {
                     MessageBox.Show("Dữ liệu đã có sẵn hoặc có lỗi xảy ra!", "Thông báo");
+                    Function.Con.Close();
                 }
             }
             else if (cmbTable.Text == "NHANVIEN")
             {
-                string query = "";
+                Function.Con.Open();
                 string ma = dgvResult.CurrentRow.Cells["MaNV"].Value.ToString();
                 string ten = dgvResult.CurrentRow.Cells["HoTenNV"].Value.ToString();
                 string diachi = dgvResult.CurrentRow.Cells["DiaChi"].Value.ToString();
@@ -343,26 +365,9 @@ namespace ATBM_Project
                 string khoa = dgvResult.CurrentRow.Cells["MaKhoa"].Value.ToString();
                 string pb = dgvResult.CurrentRow.Cells["MaPB"].Value.ToString();
 
-                if (khoa != "" && pb != "")
-                {
-                    query = "update sec_mgr." + cmbTable.Text + " values('" + ma + "','" +
-                        ten + "','" + diachi + "','" + sdt + "','" + luong + "'," + khoa + "," + pb + ")";
-                }
-                else if (khoa == "" && pb != "")
-                {
-                    query = "insert into sec_mgr." + cmbTable.Text + " values('" + ma + "','" +
-                        ten + "','" + diachi + "','" + sdt + "','" + luong + "',null," + pb + ")";
-                }
-                else if (pb == "" && khoa != "")
-                {
-                    query = "insert into sec_mgr." + cmbTable.Text + " values('" + ma + "','" +
-                        ten + "','" + diachi + "','" + sdt + "','" + luong + "'," + khoa + ",null)";
-                }
-                else
-                {
-                    query = "insert into sec_mgr." + cmbTable.Text + " values('" + ma + "','" +
-                        ten + "','" + diachi + "','" + sdt + "','" + luong + "',null,null)";
-                }
+                string query = "update sec_mgr." + cmbTable.Text + " set HoTenNV = '" + ten + "', " +
+                    "DiaChi = '" + diachi + "', SDT = '" + sdt + "', LuongCoBan" + luong + "', "
+                    + "MaKhoa = " + khoa + ", MaPB = " + pb + " where MaNV = '" + ma + "'";
 
                 OracleCommand cmd = new OracleCommand(query, Function.Con);
 
@@ -370,7 +375,7 @@ namespace ATBM_Project
                 {
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Thêm hoàn tất!", "Thông báo", MessageBoxButtons.OK);
+                    MessageBox.Show("Sửa hoàn tất!", "Thông báo", MessageBoxButtons.OK);
 
                     query = "commit";
 
@@ -385,20 +390,24 @@ namespace ATBM_Project
                     dt.Load(cmd.ExecuteReader());
 
                     dgvResult.DataSource = dt;
+                    Function.Con.Close();
                 }
                 catch
                 {
                     MessageBox.Show("Dữ liệu đã có sẵn hoặc có lỗi xảy ra!", "Thông báo");
+                    Function.Con.Close();
                 }
             }
             else if (cmbTable.Text == "CHAMCONG")
             {
+                Function.Con.Open();
                 string ma = dgvResult.CurrentRow.Cells["MaNV"].Value.ToString();
                 string ten = dgvResult.CurrentRow.Cells["TenPK"].Value.ToString();
                 string ngay = dgvResult.CurrentRow.Cells["NgayTruc"].Value.ToString();
+                string[] ngay1 = ngay.Split(' ');
 
-                string query = "insert into sec_mgr." + cmbTable.Text + " values('" + ma +
-                    "','" + ten + "',to_date('" + ngay + "','dd/mm/yyyy'))";
+                string query = "update sec_mgr." + cmbTable.Text + " set TenPK = '" + ten + "'," +
+                    " NgayTruc = to_date('" + ngay1[0] + "','mm/dd/yyyy'))";
 
                 OracleCommand cmd = new OracleCommand(query, Function.Con);
 
@@ -421,10 +430,12 @@ namespace ATBM_Project
                     dt.Load(cmd.ExecuteReader());
 
                     dgvResult.DataSource = dt;
+                    Function.Con.Close();
                 }
                 catch
                 {
                     MessageBox.Show("Dữ liệu đã có sẵn hoặc có lỗi xảy ra!", "Thông báo");
+                    Function.Con.Close();
                 }
             }
         }

@@ -57,6 +57,7 @@ namespace ATBM_Project
                 }
                 else if(txbUsername.Text.Substring(0, 2) == "NS" && txbPassword.Text.Substring(0, 2) == "NS")
                 {
+                    Function.Con.Close();
                     fNhanSu nhansu = new fNhanSu();
 
                     this.Hide();
@@ -64,6 +65,7 @@ namespace ATBM_Project
                 }
                 else if(txbUsername.Text.Substring(0, 2) == "TV" && txbPassword.Text.Substring(0, 2) == "TV")
                 {
+                    Function.Con.Close();
                     fTaiVu taivu = new fTaiVu();
 
                     this.Hide();
@@ -71,6 +73,7 @@ namespace ATBM_Project
                 }
                 else if(txbUsername.Text.Substring(0, 2) == "TT" && txbPassword.Text.Substring(0, 2) == "TT")
                 {
+                    Function.Con.Close();
                     fTiepTan tieptan = new fTiepTan();
 
                     this.Hide();
@@ -78,6 +81,7 @@ namespace ATBM_Project
                 }
                 else if(txbUsername.Text.Substring(0, 2) == "KT" && txbPassword.Text.Substring(0, 2) == "KT")
                 {
+                    Function.Con.Close();
                     fKeToan ketoan = new fKeToan();
 
                     this.Hide();

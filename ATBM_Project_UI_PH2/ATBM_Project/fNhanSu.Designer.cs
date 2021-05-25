@@ -47,7 +47,6 @@ namespace ATBM_Project
             this.dgvResult.RowTemplate.Height = 33;
             this.dgvResult.Size = new System.Drawing.Size(1059, 434);
             this.dgvResult.TabIndex = 0;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
