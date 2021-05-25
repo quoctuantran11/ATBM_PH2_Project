@@ -41,6 +41,7 @@ namespace ATBM_Project
             try
             {
                 Function.Con.Open();
+                Function.Con.Close();
                 if (txbUsername.Text == "sec_mgr" && txbPassword.Text == "mgr")
                 {
                     fAdmin formadmin = new fAdmin();
@@ -57,7 +58,7 @@ namespace ATBM_Project
                 }
                 else if(txbUsername.Text.Substring(0, 2) == "NS" && txbPassword.Text.Substring(0, 2) == "NS")
                 {
-                    Function.Con.Close();
+                    
                     fNhanSu nhansu = new fNhanSu();
 
                     this.Hide();
@@ -65,7 +66,7 @@ namespace ATBM_Project
                 }
                 else if(txbUsername.Text.Substring(0, 2) == "TV" && txbPassword.Text.Substring(0, 2) == "TV")
                 {
-                    Function.Con.Close();
+                    
                     fTaiVu taivu = new fTaiVu();
 
                     this.Hide();
@@ -73,7 +74,7 @@ namespace ATBM_Project
                 }
                 else if(txbUsername.Text.Substring(0, 2) == "TT" && txbPassword.Text.Substring(0, 2) == "TT")
                 {
-                    Function.Con.Close();
+                    
                     fTiepTan tieptan = new fTiepTan();
 
                     this.Hide();
@@ -81,7 +82,7 @@ namespace ATBM_Project
                 }
                 else if(txbUsername.Text.Substring(0, 2) == "KT" && txbPassword.Text.Substring(0, 2) == "KT")
                 {
-                    Function.Con.Close();
+                    
                     fKeToan ketoan = new fKeToan();
 
                     this.Hide();
@@ -89,7 +90,7 @@ namespace ATBM_Project
                 }    
                 else if(txbUsername.Text.Substring(0, 4) == "QLTV" && txbPassword.Text.Substring(0, 4) == "QLTV")
                 {
-                    Function.Con.Close();
+                    
                     fQuanLyTaiVu qltv = new fQuanLyTaiVu();
 
                     this.Hide();
@@ -117,7 +118,6 @@ namespace ATBM_Project
             catch(Exception)
             {
                 MessageBox.Show("Can not connect to the Database");
-                
             }
             
         }
