@@ -19,56 +19,6 @@ namespace ATBM_Project
             InitializeComponent();
         }
 
-        private void btnCreateUser_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void createToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void dropToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void grantToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void revokeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void grantUserObjectPrivilegeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void grantUserSystemPrivilegeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void grantRolePrivilegeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void revokeUserPrivilegeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void revokeRolePrivilegeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void fAdmin_Load(object sender, EventArgs e)
         {
 
@@ -111,56 +61,7 @@ namespace ATBM_Project
             Function.Con.Close();
         }
 
-        private void btnDropUser_Click(object sender, EventArgs e)
-        {
-            Function.Con.Open();
-
-            OracleCommand cmd = new OracleCommand("sp_DeleteUser", Function.Con);
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            string username = dgvSystemuser.CurrentRow.Cells["USERNAME"].Value.ToString();
-
-            cmd.Parameters.Add("p_username", OracleDbType.Varchar2).Value = username;
-
-            
-            string message;
-            try
-            {
-                int data = cmd.ExecuteNonQuery();
-                if (data != 0)
-                {
-                    message = "Drop user " + username + "!!!";
-                    MessageBox.Show(message);
-                }
-            }
-            catch
-            {
-                message = "Fail to drop user " + username;
-                MessageBox.Show(message);
-            }
-
-            Function.Con.Close();
-        }
-
-        private void systemPrivilegeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void objectPrivilegeToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void objectPrivilegeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void updateUserPrivToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         
     }

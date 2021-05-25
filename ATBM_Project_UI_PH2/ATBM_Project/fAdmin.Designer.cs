@@ -93,28 +93,24 @@ namespace ATBM_Project
             this.createToolStripMenuItem1.Name = "createToolStripMenuItem1";
             this.createToolStripMenuItem1.Size = new System.Drawing.Size(226, 44);
             this.createToolStripMenuItem1.Text = "Create";
-            this.createToolStripMenuItem1.Click += new System.EventHandler(this.createToolStripMenuItem1_Click);
             // 
             // dropToolStripMenuItem1
             // 
             this.dropToolStripMenuItem1.Name = "dropToolStripMenuItem1";
             this.dropToolStripMenuItem1.Size = new System.Drawing.Size(226, 44);
             this.dropToolStripMenuItem1.Text = "Drop";
-            this.dropToolStripMenuItem1.Click += new System.EventHandler(this.dropToolStripMenuItem1_Click);
             // 
             // grantToolStripMenuItem
             // 
             this.grantToolStripMenuItem.Name = "grantToolStripMenuItem";
             this.grantToolStripMenuItem.Size = new System.Drawing.Size(226, 44);
             this.grantToolStripMenuItem.Text = "Grant";
-            this.grantToolStripMenuItem.Click += new System.EventHandler(this.grantToolStripMenuItem_Click);
             // 
             // revokeToolStripMenuItem
             // 
             this.revokeToolStripMenuItem.Name = "revokeToolStripMenuItem";
             this.revokeToolStripMenuItem.Size = new System.Drawing.Size(226, 44);
             this.revokeToolStripMenuItem.Text = "Revoke";
-            this.revokeToolStripMenuItem.Click += new System.EventHandler(this.revokeToolStripMenuItem_Click);
             // 
             // privilegeToolStripMenuItem
             // 
@@ -134,42 +130,36 @@ namespace ATBM_Project
             this.grantUserObjectPrivilegeToolStripMenuItem.Name = "grantUserObjectPrivilegeToolStripMenuItem";
             this.grantUserObjectPrivilegeToolStripMenuItem.Size = new System.Drawing.Size(455, 44);
             this.grantUserObjectPrivilegeToolStripMenuItem.Text = "Grant User Object Privilege";
-            this.grantUserObjectPrivilegeToolStripMenuItem.Click += new System.EventHandler(this.grantUserObjectPrivilegeToolStripMenuItem_Click);
             // 
             // grantUserSystemPrivilegeToolStripMenuItem
             // 
             this.grantUserSystemPrivilegeToolStripMenuItem.Name = "grantUserSystemPrivilegeToolStripMenuItem";
             this.grantUserSystemPrivilegeToolStripMenuItem.Size = new System.Drawing.Size(455, 44);
             this.grantUserSystemPrivilegeToolStripMenuItem.Text = "Grant User System Privilege";
-            this.grantUserSystemPrivilegeToolStripMenuItem.Click += new System.EventHandler(this.grantUserSystemPrivilegeToolStripMenuItem_Click);
             // 
             // grantRolePrivilegeToolStripMenuItem
             // 
             this.grantRolePrivilegeToolStripMenuItem.Name = "grantRolePrivilegeToolStripMenuItem";
             this.grantRolePrivilegeToolStripMenuItem.Size = new System.Drawing.Size(455, 44);
             this.grantRolePrivilegeToolStripMenuItem.Text = "Grant Role Object Privilege";
-            this.grantRolePrivilegeToolStripMenuItem.Click += new System.EventHandler(this.grantRolePrivilegeToolStripMenuItem_Click);
             // 
             // revokeUserPrivilegeToolStripMenuItem
             // 
             this.revokeUserPrivilegeToolStripMenuItem.Name = "revokeUserPrivilegeToolStripMenuItem";
             this.revokeUserPrivilegeToolStripMenuItem.Size = new System.Drawing.Size(455, 44);
             this.revokeUserPrivilegeToolStripMenuItem.Text = "Revoke User Privilege";
-            this.revokeUserPrivilegeToolStripMenuItem.Click += new System.EventHandler(this.revokeUserPrivilegeToolStripMenuItem_Click);
             // 
             // revokeRolePrivilegeToolStripMenuItem
             // 
             this.revokeRolePrivilegeToolStripMenuItem.Name = "revokeRolePrivilegeToolStripMenuItem";
             this.revokeRolePrivilegeToolStripMenuItem.Size = new System.Drawing.Size(455, 44);
             this.revokeRolePrivilegeToolStripMenuItem.Text = "Revoke Role Privilege";
-            this.revokeRolePrivilegeToolStripMenuItem.Click += new System.EventHandler(this.revokeRolePrivilegeToolStripMenuItem_Click);
             // 
             // updateUserPrivToolStripMenuItem
             // 
             this.updateUserPrivToolStripMenuItem.Name = "updateUserPrivToolStripMenuItem";
             this.updateUserPrivToolStripMenuItem.Size = new System.Drawing.Size(455, 44);
             this.updateUserPrivToolStripMenuItem.Text = "Update User Object Privilege";
-            this.updateUserPrivToolStripMenuItem.Click += new System.EventHandler(this.updateUserPrivToolStripMenuItem_Click);
             // 
             // checkInformationToolStripMenuItem
             // 
@@ -194,14 +184,12 @@ namespace ATBM_Project
             this.objectPrivilegeToolStripMenuItem.Name = "objectPrivilegeToolStripMenuItem";
             this.objectPrivilegeToolStripMenuItem.Size = new System.Drawing.Size(323, 44);
             this.objectPrivilegeToolStripMenuItem.Text = "Object Privilege";
-            this.objectPrivilegeToolStripMenuItem.Click += new System.EventHandler(this.objectPrivilegeToolStripMenuItem_Click);
             // 
             // systemPrivilegeToolStripMenuItem
             // 
             this.systemPrivilegeToolStripMenuItem.Name = "systemPrivilegeToolStripMenuItem";
             this.systemPrivilegeToolStripMenuItem.Size = new System.Drawing.Size(323, 44);
             this.systemPrivilegeToolStripMenuItem.Text = "System Privilege";
-            this.systemPrivilegeToolStripMenuItem.Click += new System.EventHandler(this.systemPrivilegeToolStripMenuItem_Click);
             // 
             // privilegeOfRoleToolStripMenuItem
             // 
@@ -217,7 +205,6 @@ namespace ATBM_Project
             this.objectPrivilegeToolStripMenuItem1.Name = "objectPrivilegeToolStripMenuItem1";
             this.objectPrivilegeToolStripMenuItem1.Size = new System.Drawing.Size(323, 44);
             this.objectPrivilegeToolStripMenuItem1.Text = "Object Privilege";
-            this.objectPrivilegeToolStripMenuItem1.Click += new System.EventHandler(this.objectPrivilegeToolStripMenuItem1_Click);
             // 
             // systemPrivilegeToolStripMenuItem1
             // 
@@ -255,7 +242,6 @@ namespace ATBM_Project
             this.btnCreateUser.TabIndex = 3;
             this.btnCreateUser.Text = "Create User";
             this.btnCreateUser.UseVisualStyleBackColor = true;
-            this.btnCreateUser.Click += new System.EventHandler(this.btnCreateUser_Click);
             // 
             // btnDropUser
             // 
@@ -266,7 +252,6 @@ namespace ATBM_Project
             this.btnDropUser.TabIndex = 4;
             this.btnDropUser.Text = "Drop User";
             this.btnDropUser.UseVisualStyleBackColor = true;
-            this.btnDropUser.Click += new System.EventHandler(this.btnDropUser_Click);
             // 
             // btnTableList
             // 

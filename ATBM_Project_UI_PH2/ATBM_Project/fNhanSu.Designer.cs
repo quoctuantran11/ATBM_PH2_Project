@@ -29,24 +29,24 @@ namespace ATBM_Project
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvResult = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbTable = new System.Windows.Forms.ComboBox();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvResult
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(36, 144);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 82;
-            this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(1059, 434);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResult.Location = new System.Drawing.Point(36, 136);
+            this.dgvResult.Name = "dgvResult";
+            this.dgvResult.RowHeadersWidth = 82;
+            this.dgvResult.RowTemplate.Height = 33;
+            this.dgvResult.Size = new System.Drawing.Size(1059, 434);
+            this.dgvResult.TabIndex = 0;
             // 
             // label1
             // 
@@ -58,58 +58,64 @@ namespace ATBM_Project
             this.label1.TabIndex = 1;
             this.label1.Text = "Quản lý tài nguyên nhân sự";
             // 
-            // comboBox1
+            // cmbTable
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(715, 97);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(379, 33);
-            this.comboBox1.TabIndex = 2;
+            this.cmbTable.FormattingEnabled = true;
+            this.cmbTable.Location = new System.Drawing.Point(716, 90);
+            this.cmbTable.Name = "cmbTable";
+            this.cmbTable.Size = new System.Drawing.Size(379, 33);
+            this.cmbTable.TabIndex = 2;
+            this.cmbTable.SelectedIndexChanged += new System.EventHandler(this.cmbTable_SelectedIndexChanged);
             // 
             // btnThem
             // 
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnThem.Location = new System.Drawing.Point(36, 602);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(153, 40);
+            this.btnThem.Size = new System.Drawing.Size(153, 47);
             this.btnThem.TabIndex = 3;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnXoa
             // 
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnXoa.Location = new System.Drawing.Point(474, 602);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(153, 40);
+            this.btnXoa.Size = new System.Drawing.Size(153, 47);
             this.btnXoa.TabIndex = 4;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnSua.Location = new System.Drawing.Point(942, 602);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(153, 40);
+            this.btnSua.Size = new System.Drawing.Size(153, 47);
             this.btnSua.TabIndex = 5;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // fNhanSu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1133, 661);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1133, 666);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnThem);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbTable);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvResult);
             this.Name = "fNhanSu";
             this.Text = "Nhân sự";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.fNhanSu_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,9 +123,9 @@ namespace ATBM_Project
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvResult;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbTable;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
