@@ -31,12 +31,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvBang = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.cmbBang = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBang)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cmbBang);
             this.panel1.Controls.Add(this.dgvBang);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(13, 13);
@@ -47,22 +49,31 @@
             // dgvBang
             // 
             this.dgvBang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBang.Location = new System.Drawing.Point(21, 91);
+            this.dgvBang.Location = new System.Drawing.Point(21, 118);
             this.dgvBang.Name = "dgvBang";
             this.dgvBang.RowHeadersWidth = 62;
             this.dgvBang.RowTemplate.Height = 28;
-            this.dgvBang.Size = new System.Drawing.Size(820, 380);
+            this.dgvBang.Size = new System.Drawing.Size(820, 353);
             this.dgvBang.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(311, 37);
+            this.label1.Location = new System.Drawing.Point(311, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(216, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "BÁN THUỐC";
+            // 
+            // cmbBang
+            // 
+            this.cmbBang.FormattingEnabled = true;
+            this.cmbBang.Location = new System.Drawing.Point(720, 71);
+            this.cmbBang.Name = "cmbBang";
+            this.cmbBang.Size = new System.Drawing.Size(121, 28);
+            this.cmbBang.TabIndex = 2;
+            this.cmbBang.SelectedIndexChanged += new System.EventHandler(this.cmbBang_SelectedIndexChanged);
             // 
             // fBanThuoc
             // 
@@ -72,6 +83,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "fBanThuoc";
             this.Text = "Bán thuốc";
+            this.Load += new System.EventHandler(this.fBanThuoc_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBang)).EndInit();
@@ -84,5 +96,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvBang;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbBang;
     }
 }

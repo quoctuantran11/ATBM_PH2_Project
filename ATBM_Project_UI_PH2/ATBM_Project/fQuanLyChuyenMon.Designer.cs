@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dgvBang = new System.Windows.Forms.DataGridView();
             this.cmbBang = new System.Windows.Forms.ComboBox();
+            this.dgvBang = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBang)).BeginInit();
             this.SuspendLayout();
@@ -46,15 +46,14 @@
             this.panel1.Size = new System.Drawing.Size(847, 543);
             this.panel1.TabIndex = 0;
             // 
-            // label1
+            // cmbBang
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(203, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(407, 37);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "QUẢN LÝ CHUYÊN MÔN";
+            this.cmbBang.FormattingEnabled = true;
+            this.cmbBang.Location = new System.Drawing.Point(683, 90);
+            this.cmbBang.Name = "cmbBang";
+            this.cmbBang.Size = new System.Drawing.Size(121, 28);
+            this.cmbBang.TabIndex = 2;
+            this.cmbBang.SelectedIndexChanged += new System.EventHandler(this.cmbBang_SelectedIndexChanged);
             // 
             // dgvBang
             // 
@@ -66,13 +65,15 @@
             this.dgvBang.Size = new System.Drawing.Size(763, 352);
             this.dgvBang.TabIndex = 1;
             // 
-            // cmbBang
+            // label1
             // 
-            this.cmbBang.FormattingEnabled = true;
-            this.cmbBang.Location = new System.Drawing.Point(683, 90);
-            this.cmbBang.Name = "cmbBang";
-            this.cmbBang.Size = new System.Drawing.Size(121, 28);
-            this.cmbBang.TabIndex = 2;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(203, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(407, 37);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "QUẢN LÝ CHUYÊN MÔN";
             // 
             // fQuanLyChuyenMon
             // 
@@ -82,6 +83,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "fQuanLyChuyenMon";
             this.Text = "Quản lý chuyên môn";
+            this.Load += new System.EventHandler(this.fQuanLyChuyenMon_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBang)).EndInit();

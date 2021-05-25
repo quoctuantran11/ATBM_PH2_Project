@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dgvBang = new System.Windows.Forms.DataGridView();
-            this.cmbBang = new System.Windows.Forms.ComboBox();
-            this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.cmbBang = new System.Windows.Forms.ComboBox();
+            this.dgvBang = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBang)).BeginInit();
             this.SuspendLayout();
@@ -50,15 +50,32 @@
             this.panel1.Size = new System.Drawing.Size(884, 582);
             this.panel1.TabIndex = 0;
             // 
-            // label1
+            // btnSua
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(378, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 37);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "BÁC SĨ";
+            this.btnSua.Location = new System.Drawing.Point(530, 499);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(97, 55);
+            this.btnSua.TabIndex = 4;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            // 
+            // btnThem
+            // 
+            this.btnThem.Location = new System.Drawing.Point(263, 499);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(97, 55);
+            this.btnThem.TabIndex = 3;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            // 
+            // cmbBang
+            // 
+            this.cmbBang.FormattingEnabled = true;
+            this.cmbBang.Location = new System.Drawing.Point(734, 107);
+            this.cmbBang.Name = "cmbBang";
+            this.cmbBang.Size = new System.Drawing.Size(121, 28);
+            this.cmbBang.TabIndex = 2;
+            this.cmbBang.SelectedIndexChanged += new System.EventHandler(this.cmbBang_SelectedIndexChanged);
             // 
             // dgvBang
             // 
@@ -70,31 +87,15 @@
             this.dgvBang.Size = new System.Drawing.Size(830, 302);
             this.dgvBang.TabIndex = 1;
             // 
-            // cmbBang
+            // label1
             // 
-            this.cmbBang.FormattingEnabled = true;
-            this.cmbBang.Location = new System.Drawing.Point(734, 107);
-            this.cmbBang.Name = "cmbBang";
-            this.cmbBang.Size = new System.Drawing.Size(121, 28);
-            this.cmbBang.TabIndex = 2;
-            // 
-            // btnThem
-            // 
-            this.btnThem.Location = new System.Drawing.Point(263, 499);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(97, 55);
-            this.btnThem.TabIndex = 3;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
-            // 
-            // btnSua
-            // 
-            this.btnSua.Location = new System.Drawing.Point(530, 499);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(97, 55);
-            this.btnSua.TabIndex = 4;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(378, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(127, 37);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "BÁC SĨ";
             // 
             // fBacSi
             // 
@@ -104,6 +105,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "fBacSi";
             this.Text = "Bác sĩ";
+            this.Load += new System.EventHandler(this.fBacSi_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBang)).EndInit();

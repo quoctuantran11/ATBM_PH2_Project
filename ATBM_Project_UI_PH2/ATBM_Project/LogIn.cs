@@ -85,6 +85,7 @@ namespace ATBM_Project
                 }    
                 else if(txbUsername.Text.Substring(0, 4) == "QLTV" && txbPassword.Text.Substring(0, 4) == "QLTV")
                 {
+                    Function.Con.Close();
                     fQuanLyTaiVu qltv = new fQuanLyTaiVu();
 
                     this.Hide();
@@ -103,10 +104,10 @@ namespace ATBM_Project
 
                     this.Hide();
                     banthuoc.ShowDialog();
-                }    
+                }
+
                 
                 this.Show();
-                
             }
 
             catch(Exception)
