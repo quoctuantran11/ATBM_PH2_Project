@@ -356,6 +356,7 @@ namespace ATBM_Project
             }
             else if (cmbTable.Text == "NHANVIEN")
             {
+                string query = "";
                 Function.Con.Open();
                 string ma = dgvResult.CurrentRow.Cells["MaNV"].Value.ToString();
                 string ten = dgvResult.CurrentRow.Cells["HoTenNV"].Value.ToString();
@@ -365,9 +366,30 @@ namespace ATBM_Project
                 string khoa = dgvResult.CurrentRow.Cells["MaKhoa"].Value.ToString();
                 string pb = dgvResult.CurrentRow.Cells["MaPB"].Value.ToString();
 
-                string query = "update sec_mgr." + cmbTable.Text + " set HoTenNV = '" + ten + "', " +
-                    "DiaChi = '" + diachi + "', SDT = '" + sdt + "', LuongCoBan" + luong + "', "
-                    + "MaKhoa = " + khoa + ", MaPB = " + pb + " where MaNV = '" + ma + "'";
+                if (khoa == "" && pb == "")
+                {
+                    query = "update sec_mgr." + cmbTable.Text + " set HoTenNV = '" + ten + "', " +
+                        "DiaChi = '" + diachi + "', SDT = '" + sdt + "', LuongCoBan = '" + luong + "', "
+                        + "MaKhoa = '', MaPB = '' where MaNV = '" + ma + "'";
+                }
+                else if (khoa == "" && pb != "")
+                {
+                    query = "update sec_mgr." + cmbTable.Text + " set HoTenNV = '" + ten + "', " +
+                        "DiaChi = '" + diachi + "', SDT = '" + sdt + "', LuongCoBan = '" + luong + "', "
+                        + "MaKhoa = '', MaPB = " + pb + " where MaNV = '" + ma + "'";
+                }
+                else if (pb == "" && khoa != "")
+                {
+                    query = "update sec_mgr." + cmbTable.Text + " set HoTenNV = '" + ten + "', " +
+                        "DiaChi = '" + diachi + "', SDT = '" + sdt + "', LuongCoBan = '" + luong + "', "
+                        + "MaKhoa = " + khoa + ", MaPB = '' where MaNV = '" + ma + "'";
+                }
+                else
+                {
+                    query = "update sec_mgr." + cmbTable.Text + " set HoTenNV = '" + ten + "', " +
+                        "DiaChi = '" + diachi + "', SDT = '" + sdt + "', LuongCoBan = '" + luong + "', "
+                        + "MaKhoa = " + khoa + ", MaPB = " + pb + " where MaNV = '" + ma + "'";
+                }
 
                 OracleCommand cmd = new OracleCommand(query, Function.Con);
 
@@ -407,7 +429,7 @@ namespace ATBM_Project
                 string[] ngay1 = ngay.Split(' ');
 
                 string query = "update sec_mgr." + cmbTable.Text + " set TenPK = '" + ten + "'," +
-                    " NgayTruc = to_date('" + ngay1[0] + "','mm/dd/yyyy'))";
+                    " NgayTruc = to_date('" + ngay1[0] + "','mm/dd/yyyy') where MaNV = '" + ma + "'";
 
                 OracleCommand cmd = new OracleCommand(query, Function.Con);
 
@@ -415,7 +437,7 @@ namespace ATBM_Project
                 {
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Thêm hoàn tất!", "Thông báo", MessageBoxButtons.OK);
+                    MessageBox.Show("Sửa hoàn tất!", "Thông báo", MessageBoxButtons.OK);
 
                     query = "commit";
 

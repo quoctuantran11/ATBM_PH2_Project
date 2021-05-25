@@ -55,6 +55,12 @@
     <Compile Include="fAdmin.Designer.cs">
       <DependentUpon>fAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="fAudit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAudit.Designer.cs">
+      <DependentUpon>fAudit.cs</DependentUpon>
+    </Compile>
     <Compile Include="fBacSi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="fAdmin.resx">
       <DependentUpon>fAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fAudit.resx">
+      <DependentUpon>fAudit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fBacSi.resx">
       <DependentUpon>fBacSi.cs</DependentUpon>

@@ -23,15 +23,12 @@ namespace ATBM_Project
         {
             cmbTable.DisplayMember = "table_name";
             cmbTable.DataSource = Load_combo();
-            cmbTable.SelectedIndex = -1;
-            if (cmbTable.SelectedIndex == -1)
-            {
-                cmbTable.Text = "Table";
-            }
         }
 
         private DataTable Load_combo()
         {
+            Function.Con.Open();
+
             OracleCommand cmd = new OracleCommand("sec_mgr.sp_TiepTan", Function.Con);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -40,6 +37,7 @@ namespace ATBM_Project
             DataTable dt = new DataTable();
             dt.Load(cmd.ExecuteReader());
 
+            Function.Con.Close();
             return dt;
         }
 
@@ -47,6 +45,8 @@ namespace ATBM_Project
         {
             if (cmbTable.SelectedIndex != -1)
             {
+                Function.Con.Open();
+
                 string query = "select * from sec_mgr." + cmbTable.Text;
 
                 OracleCommand cmd = new OracleCommand(query, Function.Con);
@@ -56,6 +56,7 @@ namespace ATBM_Project
                 dt.Load(cmd.ExecuteReader());
 
                 dgvTable.DataSource = dt;
+                Function.Con.Close();
 
                 if (cmbTable.Text == "BENHNHAN")
                 {
@@ -80,6 +81,8 @@ namespace ATBM_Project
 
         private void btnTimkiem_Click(object sender, EventArgs e)
         {
+            Function.Con.Open();
+
             OracleCommand cmd = new OracleCommand("sec_mgr.sp_TimBenhNhan", Function.Con);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -89,6 +92,7 @@ namespace ATBM_Project
             dt.Load(cmd.ExecuteReader());
 
             dgvTable.DataSource = dt;
+            Function.Con.Close();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -98,10 +102,9 @@ namespace ATBM_Project
             string diachi = dgvTable.CurrentRow.Cells["DiaChi"].Value.ToString();
             string sdt = dgvTable.CurrentRow.Cells["SDT"].Value.ToString();
             string namsinh = dgvTable.CurrentRow.Cells["NamSinh"].Value.ToString();
-            string[] birth = namsinh.Split(' ');
 
             string query = "insert into sec_mgr." + cmbTable.Text + " values(" + ma + ",'" + ten + "'," +
-                "'" + diachi + "','" + sdt + "',to_date('" + birth[0] + "','mm/dd/yyyy'))";
+                "'" + diachi + "','" + sdt + "'," + namsinh + ")";
             Function.Con.Open();
 
             OracleCommand cmd = new OracleCommand(query, Function.Con);
@@ -169,10 +172,14 @@ namespace ATBM_Project
         private void btnSua_Click(object sender, EventArgs e)
         {
             Function.Con.Open();
-            string ma = dgvTable.CurrentRow.Cells["MaPB"].Value.ToString();
-            string ten = dgvTable.CurrentRow.Cells["TenPB"].Value.ToString();
+            string ma = dgvTable.CurrentRow.Cells["MaBN"].Value.ToString();
+            string ten = dgvTable.CurrentRow.Cells["HoTenBN"].Value.ToString();
+            string diachi = dgvTable.CurrentRow.Cells["DiaChi"].Value.ToString();
+            string sdt = dgvTable.CurrentRow.Cells["SDT"].Value.ToString();
+            string namsinh = dgvTable.CurrentRow.Cells["NamSinh"].Value.ToString();
 
-            string query = "update sec_mgr." + cmbTable.Text + " set TenPB = '" + ten + "' where MaPB = " + ma;
+            string query = "update sec_mgr." + cmbTable.Text + " set HoTenBN = '" + ten + "'," +
+                "DiaChi = '" + diachi + "', SDT = '" + sdt + "', NamSinh = '" + namsinh + "' where MaBN = " + ma;
 
             OracleCommand cmd = new OracleCommand(query, Function.Con);
 

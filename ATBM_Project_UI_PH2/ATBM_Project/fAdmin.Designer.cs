@@ -49,14 +49,14 @@ namespace ATBM_Project
             this.privilegeOfRoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.objectPrivilegeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.systemPrivilegeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.auditingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showAuditingRecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvSystemuser = new System.Windows.Forms.DataGridView();
             this.lbListUser = new System.Windows.Forms.Label();
             this.btnCreateUser = new System.Windows.Forms.Button();
             this.btnDropUser = new System.Windows.Forms.Button();
             this.btnTableList = new System.Windows.Forms.Button();
             this.btnUserList = new System.Windows.Forms.Button();
-            this.auditingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.showAuditingRecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSystemuser)).BeginInit();
             this.SuspendLayout();
@@ -73,7 +73,7 @@ namespace ATBM_Project
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(630, 40);
+            this.menuStrip1.Size = new System.Drawing.Size(650, 42);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -85,7 +85,7 @@ namespace ATBM_Project
             this.grantToolStripMenuItem,
             this.revokeToolStripMenuItem});
             this.roleToolStripMenuItem.Name = "roleToolStripMenuItem";
-            this.roleToolStripMenuItem.Size = new System.Drawing.Size(81, 36);
+            this.roleToolStripMenuItem.Size = new System.Drawing.Size(81, 38);
             this.roleToolStripMenuItem.Text = "Role";
             // 
             // createToolStripMenuItem1
@@ -122,7 +122,7 @@ namespace ATBM_Project
             this.revokeRolePrivilegeToolStripMenuItem,
             this.updateUserPrivToolStripMenuItem});
             this.privilegeToolStripMenuItem.Name = "privilegeToolStripMenuItem";
-            this.privilegeToolStripMenuItem.Size = new System.Drawing.Size(136, 36);
+            this.privilegeToolStripMenuItem.Size = new System.Drawing.Size(136, 38);
             this.privilegeToolStripMenuItem.Text = "Privileges";
             // 
             // grantUserObjectPrivilegeToolStripMenuItem
@@ -167,7 +167,7 @@ namespace ATBM_Project
             this.privilegeOfUserToolStripMenuItem,
             this.privilegeOfRoleToolStripMenuItem});
             this.checkInformationToolStripMenuItem.Name = "checkInformationToolStripMenuItem";
-            this.checkInformationToolStripMenuItem.Size = new System.Drawing.Size(232, 36);
+            this.checkInformationToolStripMenuItem.Size = new System.Drawing.Size(232, 38);
             this.checkInformationToolStripMenuItem.Text = "Check Information";
             // 
             // privilegeOfUserToolStripMenuItem
@@ -211,6 +211,21 @@ namespace ATBM_Project
             this.systemPrivilegeToolStripMenuItem1.Name = "systemPrivilegeToolStripMenuItem1";
             this.systemPrivilegeToolStripMenuItem1.Size = new System.Drawing.Size(323, 44);
             this.systemPrivilegeToolStripMenuItem1.Text = "System Privilege";
+            // 
+            // auditingToolStripMenuItem
+            // 
+            this.auditingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showAuditingRecordToolStripMenuItem});
+            this.auditingToolStripMenuItem.Name = "auditingToolStripMenuItem";
+            this.auditingToolStripMenuItem.Size = new System.Drawing.Size(126, 38);
+            this.auditingToolStripMenuItem.Text = "Auditing";
+            // 
+            // showAuditingRecordToolStripMenuItem
+            // 
+            this.showAuditingRecordToolStripMenuItem.Name = "showAuditingRecordToolStripMenuItem";
+            this.showAuditingRecordToolStripMenuItem.Size = new System.Drawing.Size(377, 44);
+            this.showAuditingRecordToolStripMenuItem.Text = "Show auditing record";
+            this.showAuditingRecordToolStripMenuItem.Click += new System.EventHandler(this.showAuditingRecordToolStripMenuItem_Click);
             // 
             // dgvSystemuser
             // 
@@ -275,26 +290,12 @@ namespace ATBM_Project
             this.btnUserList.UseVisualStyleBackColor = true;
             this.btnUserList.Click += new System.EventHandler(this.btnUserList_Click);
             // 
-            // auditingToolStripMenuItem
-            // 
-            this.auditingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.showAuditingRecordToolStripMenuItem});
-            this.auditingToolStripMenuItem.Name = "auditingToolStripMenuItem";
-            this.auditingToolStripMenuItem.Size = new System.Drawing.Size(126, 36);
-            this.auditingToolStripMenuItem.Text = "Auditing";
-            // 
-            // showAuditingRecordToolStripMenuItem
-            // 
-            this.showAuditingRecordToolStripMenuItem.Name = "showAuditingRecordToolStripMenuItem";
-            this.showAuditingRecordToolStripMenuItem.Size = new System.Drawing.Size(377, 44);
-            this.showAuditingRecordToolStripMenuItem.Text = "Show auditing record";
-            // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(630, 815);
+            this.ClientSize = new System.Drawing.Size(650, 815);
             this.Controls.Add(this.btnUserList);
             this.Controls.Add(this.btnTableList);
             this.Controls.Add(this.btnDropUser);

@@ -94,3 +94,4 @@ C:\Users\nguye\Desktop\ATBM_PH2_Project\ATBM_Project_UI_PH2\ATBM_Project\obj\Deb
 C:\Users\nguye\Desktop\ATBM_PH2_Project\ATBM_Project_UI_PH2\ATBM_Project\obj\Debug\ATBM_Project.csproj.CopyComplete
 C:\Users\nguye\Desktop\ATBM_PH2_Project\ATBM_Project_UI_PH2\ATBM_Project\obj\Debug\ATBM_Project.exe
 C:\Users\nguye\Desktop\ATBM_PH2_Project\ATBM_Project_UI_PH2\ATBM_Project\obj\Debug\ATBM_Project.pdb
+C:\Users\Perry\Desktop\ATBM_PH2\ATBM_Project_UI_PH2\ATBM_Project\obj\Debug\ATBM_Project.fAudit.resources

@@ -21,6 +21,8 @@ namespace ATBM_Project
 
         private DataTable Load_combo()
         {
+            Function.Con.Open();
+
             OracleCommand cmd = new OracleCommand("sec_mgr.sp_KeToan", Function.Con);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -29,6 +31,7 @@ namespace ATBM_Project
             DataTable dt = new DataTable();
             dt.Load(cmd.ExecuteReader());
 
+            Function.Con.Close();
             return dt;
         }
 
@@ -43,6 +46,8 @@ namespace ATBM_Project
         {
             if (cmbTable.SelectedIndex != -1)
             {
+                Function.Con.Open();
+
                 string query = "select * from sec_mgr." + cmbTable.Text;
 
                 OracleCommand cmd = new OracleCommand(query, Function.Con);
@@ -52,6 +57,7 @@ namespace ATBM_Project
                 dt.Load(cmd.ExecuteReader());
 
                 dgvResult.DataSource = dt;
+                Function.Con.Close();
             }
         }
     }

@@ -21,13 +21,13 @@ namespace ATBM_Project
 
         private void fAdmin_Load(object sender, EventArgs e)
         {
+            Function.Con.Open();
 
             OracleCommand cmd = new OracleCommand("sp_ViewUser", Function.Con);
             cmd.CommandType = CommandType.StoredProcedure;
             DataTable dt = new DataTable();
             dt.Load(cmd.ExecuteReader());
             dgvSystemuser.DataSource = dt;
-
 
             Function.Con.Close();
         }
@@ -61,8 +61,13 @@ namespace ATBM_Project
             Function.Con.Close();
         }
 
-        
+        private void showAuditingRecordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fAudit audit = new fAudit();
 
-        
+            this.Hide();
+            audit.ShowDialog();
+            this.Show();
+        }
     }
 }
