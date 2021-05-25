@@ -23,9 +23,8 @@ namespace ATBM_Project
         {
             Function.Con.Open();
 
-            OracleCommand cmd = new OracleCommand("sec_mgr.sp_Bang", Function.Con);
+            OracleCommand cmd = new OracleCommand("sec_mgr.sp_Bang_BanThuoc", Function.Con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("p_Role", OracleDbType.Varchar2).Value = "BANTHUOC";
             DataTable dt = new DataTable();
             dt.Load(cmd.ExecuteReader());
             Function.Con.Close();
@@ -42,23 +41,17 @@ namespace ATBM_Project
 
         private void cmbBang_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbBang.Text == "")
-            {
-            }
-            else
-            {
-                string bang = cmbBang.Text;
-                Function.Con.Open();
-                string query = "select * from sec_mgr." + bang;
+            string bang = cmbBang.Text;
+            Function.Con.Open();
+            string query = "select * from sec_mgr." + bang;
 
-                OracleCommand cmd = new OracleCommand(query, Function.Con);
-                cmd.CommandType = CommandType.Text;
-                DataTable dt = new DataTable();
-                dt.Load(cmd.ExecuteReader());
-                dgvBang.DataSource = dt;
+            OracleCommand cmd = new OracleCommand(query, Function.Con);
+            cmd.CommandType = CommandType.Text;
+            DataTable dt = new DataTable();
+            dt.Load(cmd.ExecuteReader());
+            dgvBang.DataSource = dt;
 
-                Function.Con.Close();
-            }
+            Function.Con.Close();
         }
     }
 }

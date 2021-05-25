@@ -41,6 +41,7 @@ namespace ATBM_Project
             try
             {
                 Function.Con.Open();
+                Function.Con.Close();
                 if (txbUsername.Text == "sec_mgr" && txbPassword.Text == "mgr")
                 {
                     fAdmin formadmin = new fAdmin();
@@ -113,7 +114,6 @@ namespace ATBM_Project
             catch(Exception)
             {
                 MessageBox.Show("Can not connect to the Database");
-                
             }
             
         }
